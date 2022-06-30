@@ -1,13 +1,11 @@
+import checkNumlnputs from './checkNumlnputs';
+
 const forms = () => {
     const form = document.querySelectorAll('form'),
-          inputs = document.querySelectorAll('input'),
-          phoneInputs = document.querySelectorAll('input[name="user_phone"]');
+          inputs = document.querySelectorAll('input');
+
+    checkNumlnputs('input[name="user_phone"]');
     
-    phoneInputs.forEach(item => {
-        item.addEventListener('input', () => {
-            item.value = item.value.replace(/\D/, '');
-        });
-    });
 
     const message = {
         loading: 'Загрузка...',
